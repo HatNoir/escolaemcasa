@@ -1,0 +1,42 @@
+<div class="card-wrapper">
+
+    <div class="card-container">
+
+        <div class="card-header">
+            <img src="../../../../assets/profile-icon.png" alt="">
+            <div class="content">
+                <span class="content-name"> {{ content.autor || '-' }} </span>
+                <span 
+                    class="content-time"
+                    [matTooltip]="(content.dataPublicacao | date) || '-'"
+                    matTooltipPosition="right"
+                > 
+                    {{ timeFromNow(content.dataPublicacao) || '-' }} 
+                </span>
+            </div>
+        </div>
+        <div class="card-content">
+            <ng-container *ngIf="content.postagem != '' && !hasAlert">
+                <p> {{ content.postagem }} </p>
+            </ng-container>
+            
+            <ng-container *ngIf="content.imagem != 'none'">
+                <img [src]="content.imagem" [alt]="content.postagem">
+            </ng-container>
+
+            <ng-container *ngIf="hasAlert">
+                <div class="alert-container" [ngClass]="alertType">
+                    <div class="alert-wrapper">
+                        <p> {{ content.postagem }}  </p>
+                        <mat-divider> </mat-divider>
+                        <!-- <mat-checkbox>
+                            Li e concordo
+                        </mat-checkbox> -->
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,107 @@
+<div class="dialog-content-template">
+    <h2 mat-dialog-title> Novo professor </h2>
+    <mat-dialog-content class="content register-dialog">
+
+        <form class="form-grid" [formGroup]="_form">
+
+            <mat-form-field class="grid-2">
+                <mat-label> Nome </mat-label>
+                <input matInput required formControlName="nome" />
+            </mat-form-field>
+
+            <mat-form-field class="grid-2">
+                <mat-label> Email </mat-label>
+                <input type="email" inputmode="email" matInput required formControlName="email" />
+            </mat-form-field>
+
+            <mat-form-field class="grid-1">
+                <mat-label> senha </mat-label>
+                <input type="password" matInput required formControlName="senha"/>
+            </mat-form-field>
+
+            <mat-form-field class="grid-1">
+                <mat-label> conf. Senha </mat-label>
+                <input type="password" matInput required/>
+            </mat-form-field>
+
+            <mat-form-field class="grid-1">
+                <mat-label> CPF </mat-label>
+                <input 
+                    type="text" 
+                    inputmode="numeric" 
+                    mask="000.000.000-00"
+                    matInput 
+                    required 
+                    formControlName="cpf" 
+                />
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="grid-1">
+                <mat-label>Data nascimento</mat-label>
+                <input matInput required [matDatepicker]="picker" formControlName="dataNasc">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="grid-2">
+                <mat-label> Num. de registo </mat-label>
+                <input matInput formControlName="registro" />
+            </mat-form-field>
+        </form>
+
+        <div class="container-content">
+            <app-upload-files class="grid-2" style="width: 100%;">
+                 
+            </app-upload-files>
+    
+            <div class="list-registers">
+                <!-- <button class="button-add-list">
+                    Nova turma
+                </button>
+
+                <div class="search-autocomplete">
+                    <mat-form-field>
+                        <mat-label> Buscar turma </mat-label>
+                        <input 
+                            matInput 
+                            type="text" 
+                            [formControl]="myControl" 
+                            [matAutocomplete]="auto"
+                        >
+                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                            <mat-option 
+                                *ngFor="let option of groups$ | async as groups;" 
+                                (click)="addToGroup(option)"
+                            >
+                              {{ option.Nome }} | {{ option.Ano }} - {{ option.Periodo }}
+                            </mat-option>
+                          </mat-autocomplete>
+                    </mat-form-field>
+                </div> -->
+                <app-list-item
+                    *ngFor="let group of groupsList"
+                    [Valores]="group"
+                    (click)="removeGroup(group)"
+                    class="test"
+                    >
+                </app-list-item>
+                <ng-template #elseBlock>
+                    <p>  Não há dados </p>
+                  </ng-template>
+            </div>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions class="controls" align="center">
+        <button mat-button mat-dialog-close> Cancelar </button>
+        <button 
+            mat-flat-button 
+            color="primary" 
+            cdkFocusInitial
+            [disabled]="dialogData.type === 'edit' ?  !_form.dirty : !_form.valid"
+            (click)="dialogData.type === 'edit' ? putTeacher() : registerTeacher()"
+        >
+            {{ dialogData.type === 'edit' ? 'Salvar alterações' : 'Cadastrar professor' }}
+        </button>
+    </mat-dialog-actions>
+</div>

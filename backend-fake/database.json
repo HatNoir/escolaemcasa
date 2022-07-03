@@ -1,0 +1,186 @@
+{
+  "groups": [
+    {
+      "Nome": "Nova turma",
+      "Ano": "4° ano",
+      "Turma": "N",
+      "Periodo": "Tarde",
+      "Sala": "5",
+      "id": 3
+    },
+    {
+      "Nome": "Nova turma",
+      "Ano": "5° ano",
+      "Turma": "N",
+      "Periodo": "Tarde",
+      "Sala": "6",
+      "id": 4
+    },
+    {
+      "Nome": "Nova turma",
+      "Ano": "5° ano",
+      "Turma": "N",
+      "Periodo": "Noite",
+      "Sala": "3",
+      "id": 5
+    },
+    {
+      "Nome": "Nova turma",
+      "Ano": "1° ano",
+      "Turma": "N",
+      "Periodo": "Manhã",
+      "Sala": "3",
+      "id": 6
+    },
+    {
+      "Nome": "Nova turma",
+      "Ano": "1° ano",
+      "Turma": "N",
+      "Periodo": "Manhã",
+      "Sala": "3",
+      "id": 7
+    },
+    {
+      "Nome": "Nova turma",
+      "Ano": "1° ano",
+      "Turma": "N",
+      "Periodo": "Tarde",
+      "Sala": "6",
+      "id": 8
+    },
+    {
+      "Nome": "TURMA 123-A",
+      "Ano": "3° Ano",
+      "Turma": "B",
+      "Periodo": "Manhã",
+      "Sala": "4",
+      "id": 9
+    }
+  ],
+  "teachers": [
+    {
+      "id": 1,
+      "Nome": "Professor Legal",
+      "Email": "Professor@Univesp.com.br",
+      "Senha": "123456789",
+      "CPF": "12345678910",
+      "DataNasc": "1947-01-01",
+      "NumRegisto": "123426789-ABC",
+      "Group": 1
+    },
+    {
+      "Nome": "Professora",
+      "Email": "Professora@univesp.com.br",
+      "Senha": "1234567890",
+      "CPF": "12345678910",
+      "DataNasc": "26/12/1997",
+      "NumRegistro": "123123123",
+      "id": 2
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "Nome": "Joãozinho da silva",
+      "CPF": "98765432110",
+      "DataNasc": "2015-01-01",
+      "Observacao": "Precisa sair 10 minutos mais cedo",
+      "Group": 2
+    },
+    {
+      "id": 2,
+      "Nome": "Clarinha da silva",
+      "CPF": "78945612310",
+      "DataNasc": "2016-01-01",
+      "Observacao": "",
+      "Group": 2
+    },
+    {
+      "id": 1,
+      "Nome": "Maria da silva",
+      "CPF": "98765432110",
+      "DataNasc": "2015-01-01",
+      "Observacao": "",
+      "Group": 2
+    },
+    {
+      "id": 2,
+      "Nome": "Valentina da silva",
+      "CPF": "78945612310",
+      "DataNasc": "2016-01-01",
+      "Observacao": "",
+      "Group": 2
+    },
+    {
+      "id": 1,
+      "Nome": "Enzo da silva",
+      "CPF": "98765432110",
+      "DataNasc": "2015-01-01",
+      "Observacao": "",
+      "Group": 2
+    },
+    {
+      "id": 2,
+      "Nome": "Lucas da silva",
+      "CPF": "78945612310",
+      "DataNasc": "2016-01-01",
+      "Observacao": "",
+      "Group": 2
+    },
+    {
+      "id": 1,
+      "Nome": "Marcela da silva",
+      "CPF": "98765432110",
+      "DataNasc": "2015-01-01",
+      "Observacao": "",
+      "Group": 2
+    },
+    {
+      "id": 2,
+      "Nome": "Marcos da silva",
+      "CPF": "78945612310",
+      "DataNasc": "2016-01-01",
+      "Observacao": "",
+      "Group": 2
+    },
+    {
+      "Nome": "Luan alves",
+      "CPF": "12345678910",
+      "DataNasc": "26-12-1997",
+      "Observacao": "Sim",
+      "id": 3
+    }
+  ],
+  "responsibles": [
+    {
+      "id": 1,
+      "Nome": "Joãozinho da silva",
+      "CPF": "98765432110",
+      "DataNasc": "2015-01-01",
+      "Observacao": "",
+      "Filhos": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ]
+    },
+    {
+      "Nome": "Lucas da silva Correa",
+      "CPF": "12345678910",
+      "DataNasc": "20/04/1999",
+      "Observacao": "Lucsa amigos",
+      "id": 2
+    }
+  ],
+  "messages": [
+    {
+      "from": 1,
+      "to": 2,
+      "Message": "Aoba!",
+      "Date": "2022-01-01"
+    }
+  ]
+}

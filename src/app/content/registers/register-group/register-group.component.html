@@ -1,0 +1,77 @@
+<div class="dialog-content-template">
+    <h2 mat-dialog-title> Novo grupo </h2>
+    <mat-dialog-content class="content register-dialog">
+
+        <form class="form-grid" autocomplete="off" [formGroup]="_form">
+            <mat-form-field class="grid-2">
+                <mat-label> Nome </mat-label>
+                <input matInput required formControlName="nome" />
+            </mat-form-field>
+            <mat-form-field class="grid-1">
+                <mat-label> Ano </mat-label>
+                <input matInput required formControlName="ano" />
+            </mat-form-field>
+            <mat-form-field class="grid-1">
+                <mat-label> Turma </mat-label>
+                <input matInput required formControlName="turma" />
+            </mat-form-field>
+            <mat-form-field class="grid-1">
+                <mat-label> Periodo </mat-label>
+                <input matInput required formControlName="periodo" />
+            </mat-form-field>
+            <mat-form-field class="grid-1">
+                <mat-label> Sala </mat-label>
+                <input matInput required formControlName="sala" />
+            </mat-form-field>
+        </form>
+
+        <div class="container-content">
+
+            <div class="list-registers" style="margin-top: 10px;">
+                <button class="button-add-list">
+                    Filho vinculado
+                </button>
+
+                <!-- <div class="search-autocomplete">
+                    <mat-form-field>
+                        <mat-label> Buscar Alunos </mat-label>
+                        <input 
+                            matInput 
+                            type="text" 
+                            [formControl]="myControl" 
+                            [matAutocomplete]="auto"
+                        >
+                        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                            <mat-option 
+                                *ngFor="let option of students$ | async as Students;" 
+                                (click)="addToGroup(option)"
+                            >
+                              {{ option.Nome }}
+                            </mat-option>
+                          </mat-autocomplete>
+                    </mat-form-field>
+                </div> -->
+
+
+                <app-list-item
+                *ngFor="let student of studentsList" 
+                [Valores]="student"
+                class="test"
+            >
+                
+            </app-list-item>
+            </div>
+        </div>
+
+    </mat-dialog-content>
+    <mat-dialog-actions class="controls" align="center">
+        <button mat-button mat-dialog-close> Cancelar </button>
+        <button 
+            mat-flat-button 
+            color="primary" 
+            (click)=" dialogData.type === 'edit' ? putGroup() : registerGroup()"
+        >
+            {{ dialogData.type === 'edit' ? 'Salvar alterações' : 'Criar grupo'}}
+        </button>
+      </mat-dialog-actions>
+</div>

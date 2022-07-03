@@ -1,0 +1,84 @@
+<div class="container-messages">
+        
+    <div class="contact-list">
+        <div class="contact-list-header">
+            <span> Mensagens </span>
+        </div>
+        <div class="input-wrapper">
+            <div class="input-body">
+                <input type="text" placeholder="Buscar contato">
+                <mat-icon> search </mat-icon>
+            </div>
+            <button mat-flat-button>
+                <mat-icon> add </mat-icon>
+            </button>
+        </div>
+        <div class="contact-list-scroll">
+
+            <div class="contact-wrapper" *ngFor="let card of [].constructor(5)">
+
+                <div class="contact-body">
+
+                    <div class="contact-container">
+
+                        <img src="../../assets/profile-icon.png" alt="">
+
+                        <div class="messages-wrapper">
+
+                            <span class="user-name"> Usuario </span>
+                            <span class="user-message"> Em breve! </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="chat-container">
+
+        <div class="chat-container-header">
+            <img src="../../assets/profile-icon.png" alt="">
+            <span class="user-name">
+                John Doe
+            </span>
+        </div>
+
+        <div class="chat-container-body">
+
+            <div class="chat-container-wrapper">
+
+                <div class="chat-baloon left">
+                    <span> Olá! </span>
+                </div>
+                <div class="chat-baloon left">
+                    <span> Estamos em manutenção por aqui. </span>
+                </div>
+                <div class="chat-baloon left">
+                    <span> Em breve estaremos disponibilizando o nosso chat para facilitar a comunicação entre professores e responsáveis! </span>
+                </div>
+
+                <div class="chat-baloon right">
+                    <span> Assim que estiver tudo pronto nós avisamos</span>
+                </div>
+                <div class="chat-baloon right">
+                    <span> Obrigado! </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="chat-container-message">
+            <div class="chat-container-wrapper">
+                <input type="text">
+                <mat-icon> search </mat-icon>
+            </div>
+        </div>
+
+    </div>
+
+</div>

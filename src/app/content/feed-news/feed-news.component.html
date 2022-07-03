@@ -1,0 +1,46 @@
+<div class="container-feedNews">
+
+    <div class="container">
+
+        <div class="creator-wrapper" *ngIf="getPermission()">
+
+            <div class="creator-container">
+                <p (click)="createContent('')"> Criar publicação </p>
+            </div>
+            <div class="upload-options">
+                <div class="option" (click)="createContent('text')">
+                    <mat-icon> format_quote </mat-icon>
+                    <span> Criar texto </span>
+                </div>
+                <div class="option" (click)="createContent('text')">
+                    <mat-icon> crop_original </mat-icon>
+                    <span> Carregar foto </span>
+                </div>
+                <div class="option" (click)="createContent('alert')">
+                    <mat-icon> campaign </mat-icon>
+                    <span> Criar aviso </span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="timeline">
+
+            <app-card-news 
+                *ngFor="let post of posts; let i = index"
+                [attr.tabindex]="i"
+                aria
+                [content]="post"
+                [hasAlert]="post.hasAlert" 
+                [alertType]="post.type"
+            ></app-card-news>
+
+            <ng-container *ngIf="!posts.length">
+                <span class="no-content"> Opa! Nenhuma publicação ainda. </span>
+                <span class="shruggle"> ¯\_(ツ)_/¯ </span>
+            </ng-container>
+    
+        </div>
+
+    </div>
+
+</div>
